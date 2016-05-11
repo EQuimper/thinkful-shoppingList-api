@@ -65,7 +65,7 @@ app
 	    }
 
 	    var items = storage.update( req.body.name, id );
-	    res.status( 201 ).json( items );
+	    res.status( 200 ).json( items );
 	})
 	.put('/items/:id', (req, res) => {
 	    if (!req.body) {
@@ -79,3 +79,6 @@ app
 app.listen( process.env.PORT || 3003, () => {
     console.log( 'App listen to 3003' );
 } );
+
+exports.app = app;
+exports.storage = storage;
